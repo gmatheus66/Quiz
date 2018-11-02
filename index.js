@@ -1,5 +1,5 @@
 
-var botao1 = document.getElementById("btn1");
+var botao1 = document.getElementById("btn1");//pega o valor do id
 var botao2 = document.getElementById("btn2");
 var botao3 = document.getElementById("btn3");
 var label1 = document.getElementById("label1");
@@ -9,7 +9,7 @@ var gabarito = [];
 var opcoes = [];
 var letra;
 
-
+// adiciona um evento digo que ele finciona com o click e digo a funcao do click 
 botao1.addEventListener('click', function () {
     letra = "a";
     opcoes.push(letra);
