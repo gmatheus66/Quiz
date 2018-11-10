@@ -49,6 +49,8 @@ var pontos = [];
 var p = pontos.length;
 var i = 0;
 var t = 0;
+var text;
+var 
 var gabarito = ["a", "c", "a", "a", "b", "d", "d", "a", "a", "c"];
 
 var letra;
@@ -256,7 +258,7 @@ opcao10_4.addEventListener('click', function () {
 
 function Botao() {
 
-    while (i <= 10) {
+    while (i < 10) {
         if (pontos[i] == gabarito[i]) {
             t++;
             console.log(i, pontos[i], " ", gabarito[i]);
@@ -266,8 +268,20 @@ function Botao() {
     }
     t += -1;
     console.log(i, " ", t);
+    nota(t);
+    function nota(t) {
+        if (t >= 7) {
+            text = " /10 </br> Parabens !!!";
+            console.log(t, text);
+        }
+        else if (t < 7) {
+            text = "  Tenta novamente </br> voce consegue acertar mais opções";
+            console.log(t, text);
+        }
 
-    resu.innerHTML = t;
+    }
+    var show_text = t + text;
+    resu.innerHTML = show_text;
 }
 
 
