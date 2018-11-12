@@ -1,3 +1,11 @@
 .center{
     text-align: center;
 }
+.tab{
+	text-align: center;
+	padding: 30px;
+}
+
+input{
+	left: 30px;
+}

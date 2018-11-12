@@ -274,7 +274,7 @@ function Botao() {
             console.log(t, text);
         }
         else if (t < 7) {
-            text = "  Tenta novamente </br> voce consegue acertar mais opções";
+            text = " </br> Tenta novamente </br> voce consegue acertar mais opções";
             console.log(t, text);
         }
 
