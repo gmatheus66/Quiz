@@ -49,7 +49,7 @@ var pontos = [];
 var p = pontos.length;
 var i = 0;
 var t = 0;
-var text; 
+var text;
 var gabarito = ["a", "c", "a", "a", "b", "d", "d", "a", "a", "c"];
 
 var letra;
