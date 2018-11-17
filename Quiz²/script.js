@@ -1,4 +1,4 @@
-var opcao_1 = document.getElementById("opcao1");
+var opcao_1 = document.getElementById("opcao1");//
 var opcao_2 = document.getElementById("opcao2");
 var opcao_3 = document.getElementById("opcao3");
 var opcao_4 = document.getElementById("opcao4");
@@ -42,6 +42,11 @@ var opcao09_1 = document.getElementById("opcao9_1");
 var opcao09_2 = document.getElementById("opcao9_2");
 var opcao09_3 = document.getElementById("opcao9_3");
 var opcao09_4 = document.getElementById("opcao9_4");
+
+var opcao10_1 = document.getElementById("opcao9_1");
+var opcao10_2 = document.getElementById("opcao9_2");
+var opcao10_3 = document.getElementById("opcao9_3");
+var opcao10_4 = document.getElementById("opcao9_4");
 
 var resu = document.getElementById("result")
 var btn_prox = document.getElementById("buttonDiv");
@@ -265,7 +270,7 @@ function Botao() {
 
         i++;
     }
-    t += -1;
+    //t += -1;
     console.log(i, " ", t);
     nota(t);
     function nota(t) {
@@ -274,7 +279,7 @@ function Botao() {
             console.log(t, text);
         }
         else if (t < 7) {
-            text = " </br> Tenta novamente </br> voce consegue acertar mais opções";
+            text = " /10 </br> Tenta novamente </br> voce consegue acertar mais opções";
             console.log(t, text);
         }
 

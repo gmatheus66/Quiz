@@ -1,3 +1,12 @@
+table,tr, td{
+	border:  0px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	margin:  auto;
+	margin: auto;
+	padding: 3px;
+
+}
 .center{
     text-align: center;
 }
@@ -5,7 +14,17 @@
 	text-align: center;
 	padding: 30px;
 }
-
-input{
-	left: 30px;
+a{
+	text-decoration: none;
+	color: white;
 }
+button{
+	background-color: chartreuse;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	border : none;
+	padding:  16px 32px;
+	margin: 4px 2px;
+}
+
