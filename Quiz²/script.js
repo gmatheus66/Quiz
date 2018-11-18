@@ -1,4 +1,4 @@
-var opcao_1 = document.getElementById("opcao1");//
+var opcao_1 = document.getElementById("opcao1");// pega o elemento por id e atribui ele a uma variavel
 var opcao_2 = document.getElementById("opcao2");
 var opcao_3 = document.getElementById("opcao3");
 var opcao_4 = document.getElementById("opcao4");
@@ -48,17 +48,17 @@ var opcao10_2 = document.getElementById("opcao9_2");
 var opcao10_3 = document.getElementById("opcao9_3");
 var opcao10_4 = document.getElementById("opcao9_4");
 
-var resu = document.getElementById("result")
-var btn_prox = document.getElementById("buttonDiv");
-var pontos = [];
-var p = pontos.length;
-var i = 0;
-var t = 0;
+var resu = document.getElementById("result")//pega o elemento por id e atribui a variavel
+var pontos = [];//array fazia onde serao colocadas as opçoes o usuario;
+var p = pontos.length;//pega o tamanho do array pontos e atribui a variavel
+var i = 0;//contador
+var t = 0;//respostas certas
 var text;
-var gabarito = ["a", "c", "a", "a", "b", "d", "d", "a", "a", "c"];
+var gabarito = ["a", "c", "a", "a", "b", "d", "d", "a", "a", "c"];//respostas corretas
 
 var letra;
 
+//adiciona um evento 'click' e coloca uma function para atribuir a opcao escolhida a array
 opcao_1.addEventListener('click', function () {
     pontos[0] = "a";
     console.log(pontos);
@@ -259,7 +259,7 @@ opcao10_4.addEventListener('click', function () {
 
 })
 
-
+//verifica se cada resposta e correspondente ao gabarito
 function Botao() {
 
     while (i < 10) {
@@ -271,7 +271,9 @@ function Botao() {
         i++;
     }
     //t += -1;
+    //imprime no console o resultado
     console.log(i, " ", t);
+    console.log(pontos.length);
     nota(t);
     function nota(t) {
         if (t >= 7) {
@@ -284,12 +286,13 @@ function Botao() {
         }
 
     }
+    //pega a nota e o texto ccorrespondente a nota e mostra para o usuario atraves do innerHTML
     var show_text = t + text;
     resu.innerHTML = show_text;
 }
 
 
-
+//para uma futura ideia
 /*document.querySelector('html').onclick = function() {
     alert('Ouch! Stop poking me!');
 }*/
