@@ -1,11 +1,9 @@
-table,tr, td{
-	border:  0px solid black;
-	border-collapse: collapse;
-	text-align: center;
-	margin:  auto;
-	margin: auto;
-	padding: 3px;
-
+/*
+    cor de fundo para a pergunta
+    #bed699
+*/
+body{
+    background-color: rgba(194, 217, 160, 0.85);
 }
 .center{
     text-align: center;
@@ -19,7 +17,7 @@ a{
 	color: white;
 }
 button{
-	background-color: chartreuse;
+	background-color: #3f4f26;
 	color: white;
 	text-decoration: none;
 	cursor: pointer;
@@ -28,3 +26,62 @@ button{
 	margin: 4px 2px;
 }
 
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.container input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark{
+    position: absolute;
+    top: 0;
+	left: 42%;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+	border-radius: 50%;
+	
+}
+
+.container:hover input ~ .checkmark{
+    background-color: #ccc;
+}
+
+.container input:checked ~.checkmark{
+    background-color: #455b24;
+}
+
+.checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after{
+    display: block;
+}
+
+.container .checkmark:after{
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
