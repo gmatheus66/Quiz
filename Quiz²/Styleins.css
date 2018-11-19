@@ -1,0 +1,35 @@
+h1{
+    font-family: 'Bitter', serif;
+    font-size: 60px;
+}
+body{
+    background-color: rgba(194, 217, 160, 0.85);
+}
+div{
+	font-family: "Bitter";
+	font-size: 19px;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+button{
+	background-color: #3f4f26;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	border : none;
+	padding:  10px 20px;
+	margin: 4px 2px;
+}
+ul.disc {
+	list-style-type: disc;
+	}
+
+div#rodape{
+    height: 200px;
+    position: absolute; left: 1200px;
+    position: absolute;
+    top: 450px;
+    bottom: 10px;
+}
