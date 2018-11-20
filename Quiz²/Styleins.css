@@ -5,15 +5,16 @@ h1{
 body{
     background-color: rgba(194, 217, 160, 0.85);
 }
-div{
-	font-family: "Bitter";
+p{
+	font-family: 'Roboto', sans-serif;
 	font-size: 19px;
 }
 a{
 	text-decoration: none;
-	color: white;
 }
 button{
+	top: 60%;
+	position: absolute;
 	background-color: #3f4f26;
 	color: white;
 	text-decoration: none;
@@ -27,9 +28,9 @@ ul.disc {
 	}
 
 div#rodape{
-    height: 200px;
+    height: 400px;
     position: absolute; left: 1200px;
     position: absolute;
-    top: 450px;
+    top: 700px;
     bottom: 10px;
 }
