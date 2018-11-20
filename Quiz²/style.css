@@ -2,6 +2,10 @@
     cor de fundo para a pergunta
     #bed699
 */
+a#head{
+    text-decoration: none;
+    color: black;
+}
 p{
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
