@@ -25,6 +25,9 @@ p{
     font-size: 19px;
     text-align: center;
 }
+#git{
+    color: #000
+}
 a{
 	text-decoration: none;
 }
