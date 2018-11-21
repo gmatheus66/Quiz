@@ -30,13 +30,13 @@ a{
 }
 div#rodape{
     height: 400px;
-    position: absolute; left: 1200px;
-    position: absolute;
+    left: 80%;
+    position: absolute; 
     top: 700px;
     bottom: 10px;
 }
 button{
-	top: 70%;
+	top: 90%;
 	position: absolute;
 	background-color: #3f4f26;
 	color: white;

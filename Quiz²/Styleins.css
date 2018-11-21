@@ -13,7 +13,7 @@ a{
 	text-decoration: none;
 }
 button{
-	top: 60%;
+	top: 85%;
 	position: absolute;
 	background-color: #3f4f26;
 	color: white;
@@ -28,9 +28,9 @@ ul.disc {
 	}
 
 div#rodape{
-    height: 400px;
-    position: absolute; left: 1200px;
-    position: absolute;
+	height: 400px;
+	left: 85%;
+    position: absolute; 
     top: 700px;
     bottom: 10px;
 }

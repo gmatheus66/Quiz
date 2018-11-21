@@ -43,18 +43,18 @@ var opcao09_2 = document.getElementById("opcao9_2");
 var opcao09_3 = document.getElementById("opcao9_3");
 var opcao09_4 = document.getElementById("opcao9_4");
 
-var opcao10_1 = document.getElementById("opcao9_1");
-var opcao10_2 = document.getElementById("opcao9_2");
-var opcao10_3 = document.getElementById("opcao9_3");
-var opcao10_4 = document.getElementById("opcao9_4");
+var opcao10_1 = document.getElementById("opcao10_1");
+var opcao10_2 = document.getElementById("opcao10_2");
+var opcao10_3 = document.getElementById("opcao10_3");
+var opcao10_4 = document.getElementById("opcao10_4");
 
 var resu = document.getElementById("result")//pega o elemento por id e atribui a variavel
 var pontos = [];//array fazia onde serao colocadas as opçoes o usuario;
 var p = pontos.length;//pega o tamanho do array pontos e atribui a variavel
 var i = 0;//contador
 var t = 0;//respostas certas
-var text;
-var gabarito = ["a", "c", "a", "a", "b", "d", "d", "a", "a", "c"];//respostas corretas
+var text;                                                   
+var gabarito = ["b", "c", "a", "d", "b", "d", "d", "a", "b", "c"];//respostas corretas gabarito
 
 var letra;
 
@@ -270,7 +270,7 @@ function Botao() {
 
         i++;
     }
-    //t += -1;
+   
     //imprime no console o resultado
     console.log(i, " ", t);
     console.log(pontos.length);
@@ -291,9 +291,4 @@ function Botao() {
     resu.innerHTML = show_text;
 }
 
-
-//para uma futura ideia
-/*document.querySelector('html').onclick = function() {
-    alert('Ouch! Stop poking me!');
-}*/
 
