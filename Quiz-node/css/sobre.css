@@ -1,0 +1,54 @@
+body{
+    background-color: rgba(194, 217, 160, 0.85);
+}
+h1{
+    font-family: 'Bitter', serif;
+    font-size: 60px;
+    text-align: center;
+    width: 30px;
+    font-weight:700;
+    margin: 20px 0;
+    
+}
+ul{
+   position: relative;
+   left: 40%;
+   width: 30%;
+   
+}
+h3{
+    text-align: center;
+    font-size: 23px;
+}
+p{
+	font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    text-align: center;
+}
+#git{
+    color: #000
+}
+a{
+	text-decoration: none;
+}
+div#rodape{
+    height: 400px;
+    left: 80%;
+    position: absolute; 
+    top: 700px;
+    bottom: 10px;
+}
+.btn{
+	top: 90%;
+	position: absolute;
+	background-color: #3f4f26;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	border : none;
+	padding:  10px 20px;
+	margin: 4px 2px;
+}
+#text{
+   left: 45%;
+}

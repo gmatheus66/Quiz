@@ -1,0 +1,115 @@
+p#text{
+    left: 50%;
+}
+a#head{
+    text-decoration: none;
+    color: black;
+     position: relative;
+    left: 50%;
+    right: 50%;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    position: relative;
+    left: 15%;
+    
+}
+h1{
+    font-family: 'Bitter', serif;
+    font-size: 70px;
+}
+h3{
+    font-family: 'Bitter', serif;
+    font-size: 50px;
+}
+body{
+    background-color: rgba(194, 217, 160, 0.85);
+}
+.center{
+    text-align: center;
+}
+.tab{
+	text-align: center;
+	padding: 30px;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+button{
+	background-color: #3f4f26;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	border : none;
+	padding:  16px 32px;
+    margin: 4px 2px;
+    text-transform: uppercase;
+}
+
+.container {
+    display: block;
+    position: relative;
+    top: 80%;
+    left: 40%;
+    right: 60%;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+	margin-left: auto;
+    margin-right: auto;
+    color: black;
+
+    
+
+}
+
+.container input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark{
+    position: absolute;
+    top: 0;
+	left: 28%;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+	border-radius: 50%;
+	
+}
+
+.container:hover input ~ .checkmark{
+    background-color: #ccc;
+}
+
+.container input:checked ~.checkmark{
+    background-color: #455b24;
+}
+
+.checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after{
+    display: block;
+}
+
+.container .checkmark:after{
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
