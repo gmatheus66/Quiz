@@ -1,17 +1,22 @@
 // npm install pug
 // npm install express
+// npm install --save pug
+//npm install express-session
 //
 
 const pug = require('pug');
 const url = require('url');
 const express = require('express');
+const session = require('express-session');
 
 const compiledInicio = pug.compileFile('inicio.pug');
 const compiledInstr = pug.compileFile('instrucoes.pug');
-const compiledJogar = pug.compileFile('jogar.pug');
+//const compiledJogar = pug.compileFile('jogar.pug');
 const compiledSobre = pug.compileFile('sobre.pug');
-const compiledResultado = pug.compileFile('resultado.pug');
+const compiledTemplate = [pug.compileFile('question/question1.pug'),pug.compileFile('question/question2.pug'),pug.compileFile('question/question3.pug'), pug.compileFile('question/question4.pug'), pug.compileFile('question/question5.pug'), pug.compileFile('question/question6.pug'), pug.compileFile('question/question7.pug'), pug.compileFile('question/question8.pug'), pug.compileFile('question/question9.pug'), pug.compileFile('question/question10.pug'), pug.compileFile('resultado.pug')];
+const compiledTeste = pug.compileFile('teste.pug');
 const app = express();
+app.use(session({ secret: 'XXassasas¨¨$', resave: false, saveUninitialized: true }));
 
 const host = '127.0.0.1';
 const porta = 3000;
@@ -20,10 +25,17 @@ var query;
 var questao;
 var opcao;
 var escolha = [];
-var resultado = 0;
-var gabarito = ["b", "c", "a", "d", "b", "d", "d", "a", "b", "c"];
+var pergunta ;
+var t = 0;
+//				 2	 3  	1	4	 2	  4		4	1	 2	  3
+//var gabarito = ["b", "c", "a", "d", "b", "d", "d", "a", "b", "c"];
+var gabarito = [2,3,1,4,2,4,4,1,2,3];
+
+app.set('view', './views');
+app.set('view engine', 'pug');
 
 app.get('/', (req, res) =>{
+	req.session.pergunta=0;
     res.send(compiledInicio({}));
 });
 
@@ -33,11 +45,6 @@ app.get('/sobre', (req,res) =>{
 
 app.get('/jogar', (req,res) =>{
     res.send(compiledJogar({}));
-    parts = url.parse(req.url, true);
-    query = parts.query;
-    questao = query.q;
-    opcao = query.op;
-    ponto(questao, opcao);
 
 });
 
@@ -50,207 +57,62 @@ app.get('/resultado', (req,res) =>{
 	res.send(compiledResultado({}));
 });
 
+app.get('/q', (req,res) =>{
+	parts = url.parse(req.url, true);
+    query = parts.query;
+    opcao = query.op;
+    pergunta = req.session.pergunta;
+    console.log(`valor da variavel pergunta: ${pergunta}`);
+	if (query.op) {
+		// salva num array na seessão com as respostas
+		// incrementa session.pergunta
+		escolha[pergunta] = opcao;		
+		pergunta = req.session.pergunta++;
+		console.log(`${escolha[pergunta]}, opcao: ${opcao} session: ${req.session.pergunta}`);
+		res.status(200).send(compiledTemplate[pergunta]({}));
+		if (req.session.pergunta == 11) {
+
+			console.log(`${escolha}, session: ${req.session.pergunta}`);
+			mostrar_Resultado();
+			//res.write(`<h2>resultado: ${t}/10</h2>`);
+			//res.status(200).send(compiledTemplate[pergunta]({}));
+			// compara as respostas
+			// redireciona para resultado OU exibe apenas o resultado
+		}
+	}
+	else{
+
+		//console.log(`pergunta ${pergunta}, opcao: ${opcao}`);
+		res.status(200).send(compiledTemplate[pergunta]({}));
+		pergunta = req.session.pergunta++;
+	}
+
+});
+
+app.get('/q2', (req,res) => {
+	res.render("teste.pug",{
+				resul: 'aqui era a merda do resultado'
+			});
+});
+
+
 app.listen(porta, host,() =>{
     console.log(`http://${host}:${porta}`);
 });
 
-function ponto(questao, opcao) {
 
-	if(questao == 1){
-		if(opcao == 1){
-			escolha[0] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[0] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[0] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[0] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-		
-	}
-	else if(questao == 2){
-		if(opcao == 1){
-			escolha[1] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[1] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[1] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[1] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if(questao == 3){
-		if(opcao == 1){
-			escolha[2] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[2] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[2] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[2] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if(questao == 4){
-		if(opcao == 1){
-			escolha[3] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[3] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[3] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[3] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if(questao == 5){
-		if(opcao == 1){
-			escolha[4] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[4] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[4] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[4] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if(questao == 6){
-		if(opcao == 1){
-			escolha[5] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[5] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[5] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[5] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if(questao == 7){
-		if(opcao == 6){
-			escolha[6] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[6] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[6] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[6] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if(questao == 8){
-		if(opcao == 1){
-			escolha[7] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[7] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[7] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[7] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if (questao == 9){
-		if(opcao == 1){
-			escolha[8] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[8] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[8] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[8] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-	else if(questao == 10){
-		if(opcao == 1){
-			escolha[9] = 'a' ;
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 2){
-			escolha[9] = 'b';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 3){
-			escolha[9] = 'c';
-			console.log(`escolha: ${escolha}`);
-		}
-		else if(opcao == 4){
-			escolha[9] = 'd';
-			console.log(`escolha: ${escolha}`);
-		}
-	}
-		
-}
 
 
 function mostrar_Resultado() {
 	for (var i = 0; i <= 9; i++) {
+		
 		if(escolha[i] == gabarito[i]){
-			resultado++;
-			let t = i + 1;
-			console.log(`resul: ${resultado}, escolha: ${escolha[i]} opção: ${t};`);
+			t = t + 1;
+			console.log(`contador: ${t}, escolha: ${escolha[i]}, indice: ${i}`);
 		}
 		else{
-			let t = i + 1;
-			console.log(t);
+			//console.log(t);
 		}
 	}
+	
 }
