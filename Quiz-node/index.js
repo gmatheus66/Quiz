@@ -15,6 +15,7 @@ const compiledInstr = pug.compileFile('instrucoes.pug');
 const compiledSobre = pug.compileFile('sobre.pug');
 const compiledTemplate = [pug.compileFile('question/question1.pug'),pug.compileFile('question/question2.pug'),pug.compileFile('question/question3.pug'), pug.compileFile('question/question4.pug'), pug.compileFile('question/question5.pug'), pug.compileFile('question/question6.pug'), pug.compileFile('question/question7.pug'), pug.compileFile('question/question8.pug'), pug.compileFile('question/question9.pug'), pug.compileFile('question/question10.pug'), pug.compileFile('resultado.pug')];
 const compiledTeste = pug.compileFile('teste.pug');
+
 const app = express();
 app.use(session({ secret: 'XXassasas¨¨$', resave: false, saveUninitialized: true }));
 
@@ -31,7 +32,7 @@ var t = 0;
 //var gabarito = ["b", "c", "a", "d", "b", "d", "d", "a", "b", "c"];
 var gabarito = [2,3,1,4,2,4,4,1,2,3];
 
-app.set('view', './views');
+app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) =>{
@@ -67,31 +68,33 @@ app.get('/q', (req,res) =>{
 		// salva num array na seessão com as respostas
 		// incrementa session.pergunta
 		escolha[pergunta] = opcao;		
-		pergunta = req.session.pergunta++;
+		pergunta = ++req.session.pergunta;
 		console.log(`${escolha[pergunta]}, opcao: ${opcao} session: ${req.session.pergunta}`);
-		res.status(200).send(compiledTemplate[pergunta]({}));
-		if (req.session.pergunta == 11) {
+		if (req.session.pergunta == 10) {
 
 			console.log(`${escolha}, session: ${req.session.pergunta}`);
 			mostrar_Resultado();
+
+			
 			//res.write(`<h2>resultado: ${t}/10</h2>`);
-			//res.status(200).send(compiledTemplate[pergunta]({}));
+			res.status(200).send(compiledTemplate[pergunta]({ resul: `${t}`,}));
 			// compara as respostas
 			// redireciona para resultado OU exibe apenas o resultado
+		} else {
+			res.status(200).send(compiledTemplate[pergunta]({}));
 		}
 	}
 	else{
 
 		//console.log(`pergunta ${pergunta}, opcao: ${opcao}`);
 		res.status(200).send(compiledTemplate[pergunta]({}));
-		pergunta = req.session.pergunta++;
 	}
 
 });
 
 app.get('/q2', (req,res) => {
 	res.render("teste.pug",{
-				resul: 'aqui era a merda do resultado'
+				resul: `${t}`,
 			});
 });
 
