@@ -10,8 +10,17 @@ html
 
 		h1 Resultado
 
-		h2 Seu Resultado foi #{resul}/10
+		h2 Seu Resultado foi 
+			span.num #{resul}/10
 
-		a(href="/")
-			h2 Pagina Inicial
+		if resul >= 6
+
+			p.winner Parabens
+
+		
+		else 
+
+			p.loser Tente Novamente
+
+		a.btn(href="/") Pagina Inicial
 

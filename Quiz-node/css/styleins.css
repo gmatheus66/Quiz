@@ -3,7 +3,7 @@ h1{
     font-size: 60px;
 }
 body{
-    background-color: rgba(194, 217, 160, 0.85);
+    background-color: #b3ffff;;
 }
 p{
 	font-family: 'Roboto', sans-serif;
@@ -15,8 +15,8 @@ a{
 .btn{
 	top: 85%;
 	position: absolute;
-	background-color: #3f4f26;
-	color: white;
+	background-color: white;
+	color: black;
 	text-decoration: none;
 	cursor: pointer;
 	border : none;

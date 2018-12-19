@@ -69,7 +69,7 @@ app.get('/q', (req,res) =>{
 		// incrementa session.pergunta
 		escolha[pergunta] = opcao;		
 		pergunta = ++req.session.pergunta;
-		console.log(`${escolha[pergunta]}, opcao: ${opcao} session: ${req.session.pergunta}`);
+		//console.log(`${escolha[pergunta]}, opcao: ${opcao} session: ${req.session.pergunta}`);
 		if (req.session.pergunta == 10) {
 
 			console.log(`${escolha}, session: ${req.session.pergunta}`);
@@ -108,7 +108,8 @@ app.listen(porta, host,() =>{
 
 
 function mostrar_Resultado() {
-	for (var i = 0; i <= 9; i++) {
+	t = 0;
+	for (var i = 0; i <= 10; i++) {
 		
 		if(escolha[i] == gabarito[i]){
 			t = t + 1;

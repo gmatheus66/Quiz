@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(194, 217, 160, 0.85);
+    background-color: #b3ffff;;
 }
 h1{
     font-family: 'Bitter', serif;
@@ -41,8 +41,8 @@ div#rodape{
 .btn{
 	top: 90%;
 	position: absolute;
-	background-color: #3f4f26;
-	color: white;
+	background-color: white;
+	color: black;
 	text-decoration: none;
 	cursor: pointer;
 	border : none;

@@ -7,6 +7,7 @@ a#head{
      position: relative;
     left: 50%;
     right: 50%;
+    background-color: background-color: #3f4f26;
 }
 p{
     font-family: 'Roboto', sans-serif;
@@ -23,8 +24,17 @@ h3{
     font-family: 'Bitter', serif;
     font-size: 50px;
 }
+h2{
+
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin: 10% auto;
+    font-size: 50px;
+    left: 35%; 
+}
+
 body{
-    background-color: rgba(194, 217, 160, 0.85);
+    background-color: #b3ffff;
 }
 .center{
     text-align: center;
@@ -66,50 +76,76 @@ button{
     margin-right: auto;
     color: black;
 
-    
+}
+
+.winner {
 
 }
 
-.container input{
+
+.loser{
+    position:inline;
+    margin: auto;
+    left: 45%;
+
+    -webkit-animation: fadeIn 3s ease-in-out;
+    -moz-animation: fadeIn 3s ease-in-out;
+    -o-animation: fadeIn 3s ease-in-out;
+    animation: fadeIn 3s ease-in-out;
+    animation-direction: alternate;
+
+}
+
+.num{
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+.btn{
+
+    top: 85%;
+    left: 45%;
     position: absolute;
-    opacity: 0;
+    background-color: #3f4f26;
+    color: white;
+    text-decoration: none;
     cursor: pointer;
+    border : none;
+    padding:  10px 20px;
+    margin: 4px auto;
+    font-size: 30px;
+
 }
 
-.checkmark{
-    position: absolute;
-    top: 0;
-	left: 28%;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-	border-radius: 50%;
-	
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    20% {opacity: 0.2;}
+    50% {opacity: 0.5;}
+    70% {opacity: 0.7;}
+    100% { opacity: 1;} 
+    
 }
-
-.container:hover input ~ .checkmark{
-    background-color: #ccc;
+@-moz-keyframes fadeIn {
+     0% { opacity: 0; }
+    20% {opacity: 0.2;}
+    50% {opacity: 0.5;}
+    70% {opacity: 0.7;}
+    100% { opacity: 1;} 
+ 
 }
-
-.container input:checked ~.checkmark{
-    background-color: #455b24;
+@-o-keyframes fadeIn {
+     0% { opacity: 0; }
+    20% {opacity: 0.2;}
+    50% {opacity: 0.5;}
+    70% {opacity: 0.7;}
+    100% { opacity: 1;} 
+ 
 }
-
-.checkmark:after{
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.container input:checked ~ .checkmark:after{
-    display: block;
-}
-
-.container .checkmark:after{
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    20% {opacity: 0.2;}
+    50% {opacity: 0.5;}
+    70% {opacity: 0.7;}
+    100% { opacity: 1;} 
+ 
 }

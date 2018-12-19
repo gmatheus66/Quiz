@@ -27,10 +27,11 @@ h3{
     font-size: 50px;
 }
 body{
-    background-color: rgba(194, 217, 160, 0.85);
+    background-color: #b3ffff;;
 }
 .center{
     text-align: center;
+
 }
 .tab{
 	text-align: center;
@@ -61,10 +62,10 @@ a{
 }
 
 .item:hover{
-    background-color: #455b24;
+    background-color: white;
     
 }
 
-p#7 {
+.sete {
     margin: 1px auto;
 }
