@@ -1,0 +1,36 @@
+h1{
+    font-family: 'Bitter', serif;
+    font-size: 60px;
+}
+body{
+    background-color: rgba(194, 217, 160, 0.85);
+}
+p{
+	font-family: 'Roboto', sans-serif;
+	font-size: 19px;
+}
+a{
+	text-decoration: none;
+}
+.btn{
+	top: 85%;
+	position: absolute;
+	background-color: #3f4f26;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	border : none;
+	padding:  10px 20px;
+	margin: 4px 2px;
+}
+ul.disc {
+	list-style-type: disc;
+	}
+
+div#rodape{
+	height: 400px;
+	left: 85%;
+    position: absolute; 
+    top: 700px;
+    bottom: 10px;
+}
