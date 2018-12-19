@@ -103,7 +103,7 @@ button{
 
 .btn{
 
-    top: 85%;
+    top: 65%;
     left: 45%;
     position: absolute;
     background-color: #b3ffff;
@@ -136,6 +136,9 @@ button{
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
+}
+.ef-pulse-grow:hover{
+    background-color: white;
 }
 .ef-pulse-grow:hover, .ef-pulse-grow:focus, .ef-pulse-grow:active {
   -webkit-animation-name: ef-pulse-grow;
