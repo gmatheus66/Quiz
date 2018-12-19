@@ -4,9 +4,14 @@ html
 		meta(chaset="UTF-8")
 		title Document
 		style
+			
 			include css/style.css
 
+		
+
 	body
+	
+		
 
 		h1 Resultado
 
@@ -15,12 +20,12 @@ html
 
 		if resul >= 6
 
-			p.winner Parabens
+			a(class="btn ef-pulse-grow" href="/") Parabéns
 
 		
 		else 
 
-			p.loser Tente Novamente
+			a(class="btn ef-pulse-grow" href="/") Tente Novamente
 
-		a.btn(href="/") Pagina Inicial
+		
 

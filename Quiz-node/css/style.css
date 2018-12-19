@@ -48,8 +48,8 @@ a{
 	color: white;
 }
 button{
-	background-color: #3f4f26;
-	color: white;
+	background-color: #b3ffff;
+	color: black;
 	text-decoration: none;
 	cursor: pointer;
 	border : none;
@@ -106,8 +106,8 @@ button{
     top: 85%;
     left: 45%;
     position: absolute;
-    background-color: #3f4f26;
-    color: white;
+    background-color: #b3ffff;
+    color: black;
     text-decoration: none;
     cursor: pointer;
     border : none;
@@ -117,35 +117,35 @@ button{
 
 }
 
-@-webkit-keyframes fadeIn {
-    0% { opacity: 0; }
-    20% {opacity: 0.2;}
-    50% {opacity: 0.5;}
-    70% {opacity: 0.7;}
-    100% { opacity: 1;} 
     
+@-webkit-keyframes ef-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 }
-@-moz-keyframes fadeIn {
-     0% { opacity: 0; }
-    20% {opacity: 0.2;}
-    50% {opacity: 0.5;}
-    70% {opacity: 0.7;}
-    100% { opacity: 1;} 
- 
+@keyframes ef-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 }
-@-o-keyframes fadeIn {
-     0% { opacity: 0; }
-    20% {opacity: 0.2;}
-    50% {opacity: 0.5;}
-    70% {opacity: 0.7;}
-    100% { opacity: 1;} 
- 
+.ef-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
 }
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    20% {opacity: 0.2;}
-    50% {opacity: 0.5;}
-    70% {opacity: 0.7;}
-    100% { opacity: 1;} 
- 
+.ef-pulse-grow:hover, .ef-pulse-grow:focus, .ef-pulse-grow:active {
+  -webkit-animation-name: ef-pulse-grow;
+  animation-name: ef-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
