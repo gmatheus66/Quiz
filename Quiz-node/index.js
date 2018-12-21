@@ -1,7 +1,7 @@
 // npm install pug
 // npm install express
 // npm install --save pug
-//npm install express-session
+// npm install express-session
 //
 
 const pug = require('pug');
@@ -11,10 +11,9 @@ const session = require('express-session');
 
 const compiledInicio = pug.compileFile('inicio.pug');
 const compiledInstr = pug.compileFile('instrucoes.pug');
-//const compiledJogar = pug.compileFile('jogar.pug');
 const compiledSobre = pug.compileFile('sobre.pug');
 const compiledTemplate = [pug.compileFile('question/question1.pug'),pug.compileFile('question/question2.pug'),pug.compileFile('question/question3.pug'), pug.compileFile('question/question4.pug'), pug.compileFile('question/question5.pug'), pug.compileFile('question/question6.pug'), pug.compileFile('question/question7.pug'), pug.compileFile('question/question8.pug'), pug.compileFile('question/question9.pug'), pug.compileFile('question/question10.pug'), pug.compileFile('resultado.pug')];
-const compiledTeste = pug.compileFile('teste.pug');
+
 
 const app = express();
 app.use(session({ secret: 'XXassasas¨¨$', resave: false, saveUninitialized: true }));
@@ -93,11 +92,6 @@ app.get('/q', (req,res) =>{
 
 });
 
-app.get('/q2', (req,res) => {
-	res.render("teste.pug",{
-				resul: `${t}`,
-			});
-});
 
 
 app.listen(porta, host,() =>{
